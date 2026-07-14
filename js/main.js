@@ -20,7 +20,12 @@
     var mobileMenu = document.getElementById('mobile-menu');
     var mobileIcon = document.getElementById('mobile-menu-icon');
     var navbar = document.querySelector('nav[data-section="navbar"]');
+    var navCard = navbar ? navbar.firstElementChild : null;
     var navLinks = navbar ? navbar.querySelector('.hidden.md\\:flex') : null;
+
+    if (navCard) {
+      navCard.style.overflow = 'visible';
+    }
 
     if ((!mobileBtn || !mobileMenu) && navLinks && navLinks.parentElement) {
       if (!navLinks.id) navLinks.id = 'mobile-menu';
